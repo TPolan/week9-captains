@@ -13,19 +13,19 @@
     <a href="#" class="report">Assign a captain</a>
 
     <div class="captains">
-        <a href="{{action('CaptainController@show',)}}">
+        <a href="{{action('CaptainController@show','kirk')}}">
             <img src="img/kirk.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{action('CaptainController@show','picard')}}">
             <img src="img/picard.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{action('CaptainController@show','janeway')}}">
             <img src="img/janeway.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{action('CaptainController@show','archer')}}">
             <img src="img/archer.jpg" alt="">
         </a>
-        <a href="#">
+        <a href="{{action('CaptainController@show','georgiou')}}">
             <img src="img/georgiou.jpg" alt="">
         </a>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Captain;
+use App\Assignment;
 use Illuminate\Http\Request;
 
 class CaptainController extends Controller
@@ -31,13 +32,13 @@ class CaptainController extends Controller
 
 
         $assignment->fill($request->only([
-            "subject ",
+            "subject",
             "description",
             "captain_id",
             "user_id"
         ]));    
         $assignment->save();
 
-        return redirect(action('CaptainController@show'));
+        return redirect(back());
     }
 }
