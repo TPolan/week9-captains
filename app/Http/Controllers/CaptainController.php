@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Captain;
 use App\Assignment;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class CaptainController extends Controller
@@ -26,19 +27,21 @@ class CaptainController extends Controller
         $captains = Captain::orderBy('name','ASC')->get();
         return view('captain/index',compact('captains'));
     }
-    public function store(Request $request)
+    public function store(Request $request, $captain)
     {
         $assignment = new Assignment;
 
-
+        $assignment->user_id = Auth::id();
+        $captainID = Captain::where('slug',$captain)->get();
+        // dd($captain);
+        $assignment->captain_id = $captainID[0]->id;
         $assignment->fill($request->only([
             "subject",
             "description",
-            "captain_id",
-            "user_id"
+            
         ]));    
         $assignment->save();
 
-        return back();
+        return redirect(action('CaptainController@index'));
     }
 }
