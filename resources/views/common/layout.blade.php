@@ -13,6 +13,7 @@
 
     <nav class="menu">
         <a href="{{ route('start') }}">Home</a>
+        <a href="{{ route('roster') }}">Captains Roster</a>
         @guest
             <a href="{{ route('login') }}">Login</a>
             <a href="{{ route('register') }}">Register</a>
