@@ -39,6 +39,6 @@ class CaptainController extends Controller
         ]));    
         $assignment->save();
 
-        return redirect(back());
+        return back();
     }
 }
