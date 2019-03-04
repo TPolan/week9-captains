@@ -13,7 +13,7 @@
     <a href="#" class="report">Assign a captain</a>
 
     <div class="captains">
-        <a href="#">
+        <a href="{{action('CaptainController@show',)}}">
             <img src="img/kirk.jpg" alt="">
         </a>
         <a href="#">

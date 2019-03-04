@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
+    return view('start');
+})->name('start');
+Route::get('captain/{captain_slug}', 'CaptainController@show');
+Route::get('captains', 'CaptainController@index');
 Auth::routes();
