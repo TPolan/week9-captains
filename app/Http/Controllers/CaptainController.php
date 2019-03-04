@@ -42,6 +42,6 @@ class CaptainController extends Controller
         ]));    
         $assignment->save();
 
-        return redirect(action('CaptainController@index'));
+        return back();
     }
 }
